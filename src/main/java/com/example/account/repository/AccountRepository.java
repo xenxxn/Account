@@ -1,9 +1,11 @@
 package com.example.account.repository;
 
 import com.example.account.domain.Account;
+import com.example.account.domain.AccountUser;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
 import java.util.Optional;
 
 @Repository
@@ -13,4 +15,8 @@ public interface AccountRepository extends JpaRepository<Account, Long> {
     //bean 으로 등록하기 위해서 @Repository 를 붙여줘야함.
 
     Optional<Account> findFirstByOrderByIdDesc();
+
+    Integer countByAccountUser(AccountUser accountUser);
+
+    Optional<Account> findByAccountNumber(String AccountNumber);
 }
