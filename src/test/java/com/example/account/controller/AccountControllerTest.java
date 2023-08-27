@@ -121,6 +121,7 @@ class AccountControllerTest {
                 .andExpect(jsonPath("$[2].balance").value(3000));
 
     }
+
     @Test
     void successGetAccount() throws Exception {
         //given

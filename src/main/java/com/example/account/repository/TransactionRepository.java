@@ -15,4 +15,5 @@ public interface TransactionRepository extends JpaRepository<Transaction, Long> 
     // 두가지 타입을 받는데 첫번째는 entity 두번째는 entity 의 pk
     //bean 으로 등록하기 위해서 @Repository 를 붙여줘야함.
 
+    Optional<Transaction> findByTransactionId(String transactionId);
 }

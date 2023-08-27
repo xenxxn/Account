@@ -6,15 +6,14 @@ import lombok.*;
 import javax.validation.constraints.*;
 import java.time.LocalDateTime;
 
-public class UseBalance {
+public class CancelBalance {
     @Setter
     @AllArgsConstructor
     @Getter
     @NoArgsConstructor
     public static class Request { //static 필수
-        @NotNull
-        @Min(1)
-        private Long userId;
+        @NotBlank
+        private String transactionId;
 
         @NotBlank
         @Size(min = 10, max = 10)
